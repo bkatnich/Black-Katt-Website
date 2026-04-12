@@ -1001,6 +1001,91 @@
         }
 
         /* ---- Responsive ---- */
+        /* ---- Services Section ---- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--dark-card);
+            border: 1px solid var(--dark-card-border);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .service-card:hover {
+            background: var(--dark-card-hover);
+            border-color: rgba(0, 229, 255, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 229, 255, 0.05);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .service-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-tagline {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-features li {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            padding: 0.35rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .service-features li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-weight: 600;
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -1075,6 +1160,10 @@
             .footer-disclaimer {
                 text-align: center;
             }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -1088,6 +1177,7 @@
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#picks">Picks</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#stats">Track Record</a></li>
             <li><a href="#analysis">Analysis</a></li>
             <li><a href="#how">How It Works</a></li>
@@ -1246,6 +1336,68 @@
                 <div class="confidence-bar">
                     <div class="confidence-fill" data-width="81"></div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ========== WHAT WE OFFER ========== -->
+    <section id="services">
+        <p class="section-label reveal" style="text-align:center">Services</p>
+        <h2 class="section-title reveal" style="text-align:center">What's in the Pack</h2>
+        <p class="section-desc reveal" style="text-align:center; margin-left:auto; margin-right:auto;">Everything you need to bet smarter, backed by data and delivered daily.</p>
+
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <span class="service-icon">🏀</span>
+                <h3 class="service-name">NBA Picks</h3>
+                <p class="service-tagline">Full-season coverage, daily edges</p>
+                <ul class="service-features">
+                    <li>Spread, moneyline &amp; over/under picks daily</li>
+                    <li>200+ data points analyzed per game</li>
+                    <li>Confidence-rated with clear reasoning</li>
+                </ul>
+            </div>
+            <div class="service-card reveal">
+                <span class="service-icon">🏆</span>
+                <h3 class="service-name">Playoff Specials</h3>
+                <p class="service-tagline">When it matters most</p>
+                <ul class="service-features">
+                    <li>Enhanced analysis for postseason matchups</li>
+                    <li>Series pricing breakdowns &amp; adjustments</li>
+                    <li>Live updates as series dynamics shift</li>
+                </ul>
+            </div>
+            <div class="service-card reveal">
+                <span class="service-icon">📊</span>
+                <h3 class="service-name">Deep Dives</h3>
+                <p class="service-tagline">Know why, not just what</p>
+                <ul class="service-features">
+                    <li>Matchup breakdowns &amp; trend reports</li>
+                    <li>Injury impact analysis</li>
+                    <li>Market inefficiency spotlights</li>
+                </ul>
+            </div>
+            <div class="service-card reveal">
+                <span class="service-icon">👥</span>
+                <h3 class="service-name">The Pack</h3>
+                <p class="service-tagline">2,400+ members and growing</p>
+                <ul class="service-features">
+                    <li>Private community access</li>
+                    <li>Real-time alerts on line movements</li>
+                    <li>Member discussion &amp; shared insights</li>
+                </ul>
+            </div>
+            <div class="service-card reveal">
+                <span class="service-icon">🎯</span>
+                <h3 class="service-name">Proven Results</h3>
+                <p class="service-tagline">67.4% win rate, fully transparent</p>
+                <ul class="service-features">
+                    <li>Complete pick history — nothing hidden</li>
+                    <li>ROI tracking across all bet types</li>
+                    <li>Verified results you can audit</li>
+                </ul>
             </div>
         </div>
     </section>
